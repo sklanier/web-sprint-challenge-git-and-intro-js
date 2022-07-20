@@ -219,7 +219,7 @@ console.log(artists[2].bio);
 (no function needed) 
 There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Fix this issue and console.log() to check your work. */
 
-artists[8].name = "Vincent Van Gogh";
+//artists[8].name = "Vincent Van Gogh";
 console.log(artists[8].name);
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀  
@@ -232,7 +232,7 @@ Use getArtistByIndex to do the following:
 🌟 EXAMPLE: if getArtistByIndex is invoked with the artists array and the number 0, it will return `the artist at index 0 is Amedeo Modigliani` */
 
 function getArtistByIndex(arr, i) {
-  return `the artist at index ${i} is ${artists[i].name}`;
+  return `the artist at index ${i} is ${arr[i].name}`;
 }
 
 
@@ -244,9 +244,14 @@ Use copy to do the following:
 🌟 EXAMPLE of return: ["Amedeo Modigliani", "Vasiliy Kandinskiy", "Diego Rivera"....]
 */
 
-function listOfNames(/*Your Code Here*/) {
-  /*Your Code Here*/
+function listOfNames(arr) {
+  let copy = [...arr];
+  for (let i = 0; i < arr.length; i++){
+    copy[i] = `${artists[i].name}`;
+  }
+  return copy;
 }
+console.log(listOfNames(artists));
 
 
 
